@@ -27,7 +27,10 @@
         <a href="#proyectos">Proyectos</a>
         <a href="#contacto">Contacto</a>
       </nav>
-      <button id="theme-toggle" class="theme-button">🎨</button>
+      <div class="theme-switcher">
+        <button id="theme-toggle" class="theme-button">🎨</button>
+        <span class="theme-label">Cambia el tema</span>
+      </div>
     </div>
   </header>
 
@@ -107,15 +110,22 @@
 
   <script>
     const themes = ["light","dark","violet","green","orange"];
-    let current = 0;
+    const saved = localStorage.getItem("theme");
+    let current = saved ? themes.indexOf(saved) : 0;
+    if(current < 0) current = 0;
+
     const body = document.body;
     const button = document.getElementById("theme-toggle");
-    body.classList.add(themes[current]);
+    function setTheme(name){
+      body.className = name;
+      localStorage.setItem("theme", name);
+    }
+    setTheme(themes[current]);
+
     button.addEventListener("click", () => {
       current = (current + 1) % themes.length;
-      body.className = themes[current];
+      setTheme(themes[current]);
     });
   </script>
 </body>
 </html>
-
