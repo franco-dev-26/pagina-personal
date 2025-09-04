@@ -10,10 +10,10 @@
 
   <script>
     (function(){
-      var themes = ["light","dark","violet","green","orange"];
-      var saved = localStorage.getItem("theme");
-      var initial = themes.indexOf(saved) >= 0 ? saved : "dark";
-      document.documentElement.setAttribute("data-theme", initial);
+      var temas = ["claro","oscuro","violeta","verde","naranja"];
+      var guardado = localStorage.getItem("tema");
+      var inicial = temas.indexOf(guardado) >= 0 ? guardado : "oscuro";
+      document.documentElement.setAttribute("data-tema", inicial);
     })();
   </script>
 
@@ -38,8 +38,8 @@
         <a href="#contacto">Contacto</a>
       </nav>
       <div class="theme-switcher">
-        <button id="theme-toggle" class="theme-button">🎨</button>
-        <span id="theme-label" class="theme-label">Cambia el tema</span>
+        <button id="tema-toggle" class="theme-button">🎨</button>
+        <span id="tema-label" class="theme-label">Tema: Oscuro</span>
       </div>
     </div>
   </header>
@@ -119,25 +119,24 @@
   </footer>
 
   <script>
-    const themes = ["light","dark","violet","green","orange"];
-    const body = document.body;
+    const temas = ["claro","oscuro","violeta","verde","naranja"];
     const html = document.documentElement;
-    const button = document.getElementById("theme-toggle");
-    const label = document.getElementById("theme-label");
+    const boton = document.getElementById("tema-toggle");
+    const etiqueta = document.getElementById("tema-label");
 
-    function setTheme(name){
-      html.setAttribute("data-theme", name);
-      localStorage.setItem("theme", name);
-      label.textContent = "Tema: " + name;
+    function aplicarTema(nombre){
+      html.setAttribute("data-tema", nombre);
+      localStorage.setItem("tema", nombre);
+      etiqueta.textContent = "Tema: " + nombre.charAt(0).toUpperCase() + nombre.slice(1);
     }
 
-    const current = html.getAttribute("data-theme") || "dark";
-    setTheme(current);
+    const actual = html.getAttribute("data-tema") || "oscuro";
+    aplicarTema(actual);
 
-    button.addEventListener("click", () => {
-      const i = themes.indexOf(html.getAttribute("data-theme"));
-      const next = themes[(i + 1) % themes.length];
-      setTheme(next);
+    boton.addEventListener("click", () => {
+      const i = temas.indexOf(html.getAttribute("data-tema"));
+      const siguiente = temas[(i + 1) % temas.length];
+      aplicarTema(siguiente);
     });
   </script>
 </body>
