@@ -117,8 +117,8 @@
       <p>© 2025 Franco Ezequiel Aguinaga· Programador</p>
     </div>
   </footer>
-
-  <script>
+  
+   <script>
     const temas = ["claro","oscuro","violeta","verde","naranja"];
     const html = document.documentElement;
     const boton = document.getElementById("tema-toggle");
@@ -138,6 +138,18 @@
       const siguiente = temas[(i + 1) % temas.length];
       aplicarTema(siguiente);
     });
+  </script>
+
+  <script>
+    (function() {
+      const links = document.querySelectorAll('a[href]');
+      links.forEach(a => {
+        const href = a.getAttribute('href') || '';
+        if (href.startsWith('#') || href.startsWith('mailto:') || href.startsWith('tel:')) return;
+        a.setAttribute('target', '_blank');
+        a.setAttribute('rel', 'noopener');
+      });
+    })();
   </script>
 </body>
 </html>
