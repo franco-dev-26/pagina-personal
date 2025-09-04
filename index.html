@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Franco Ezequiel Aguinaga — Desarrollador</title>
+  <title>Franco — Desarrollador</title>
   <meta name="description" content="Portafolio de Franco: proyectos, contacto y experiencia como desarrollador web en formación." />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
   <meta name="theme-color" content="#2563eb" />
@@ -21,44 +21,40 @@
   <link rel="icon" href="/favicon.ico" />
 </head>
 <body>
-    <a class="skip-link" href="#contenido">Saltar al contenido</a>
+  <a class="skip-link" href="#contenido">Saltar al contenido</a>
 
-<header class="site-header">
-  <div class="container header-inner">
-    <div class="branding">
-      <span class="logo pro" aria-hidden="true">
-        <svg class="logo-fr" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img">
-          <defs>
-            <linearGradient id="grad" x1="0" y1="0" x2="1" y2="1">
-              <stop offset="0%" stop-color="var(--brand)"/>
-              <stop offset="100%" stop-color="var(--brand-600)"/>
-            </linearGradient>
-            <filter id="softShadow" x="-50%" y="-50%" width="200%" height="200%">
-              <feDropShadow dx="0" dy="2" stdDeviation="3" flood-opacity=".25"/>
-            </filter>
-          </defs>
-
-          <circle cx="32" cy="32" r="30" fill="url(#grad)" filter="url(#softShadow)"/>
-      
-          <circle cx="32" cy="32" r="24" fill="var(--surface)"/>
-         
-          <text x="32" y="36" fill="var(--text)" 
-                font-family="Inter, sans-serif" 
-                font-weight="800" font-size="22" 
-                text-anchor="middle">FR</text>
-        </svg>
-      </span>
-
-      <div>
-        <h1 class="title">Franco</h1>
+  <header class="site-header">
+    <div class="container header-inner">
+      <div class="branding">
+        <span class="logo pro" aria-hidden="true">
+          <svg class="logo-fr" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img">
+            <defs>
+              <linearGradient id="grad" x1="0" y1="0" x2="1" y2="1">
+                <stop offset="0%" stop-color="var(--brand)"/>
+                <stop offset="100%" stop-color="var(--brand-600)"/>
+              </linearGradient>
+              <filter id="softShadow" x="-50%" y="-50%" width="200%" height="200%">
+                <feDropShadow dx="0" dy="2" stdDeviation="3" flood-opacity=".25"/>
+              </filter>
+            </defs>
+            <circle cx="32" cy="32" r="30" fill="url(#grad)" filter="url(#softShadow)"/>
+            <circle cx="32" cy="32" r="24" fill="var(--surface)"/>
+            <text x="32" y="36" fill="var(--text)" font-family="Inter, sans-serif"
+                  font-weight="800" font-size="22" text-anchor="middle">FR</text>
+          </svg>
+        </span>
+        <div>
+          <h1 class="title">Franco</h1>
           <p class="subtitle">Desarrollador web en formación</p>
         </div>
       </div>
+
       <nav class="nav" aria-label="Principal">
         <a href="#sobre-mi">Sobre mí</a>
         <a href="#proyectos">Proyectos</a>
         <a href="#contacto">Contacto</a>
       </nav>
+
       <div class="theme-switcher">
         <button id="tema-toggle" class="theme-button">🎨</button>
         <span id="tema-label" class="theme-label">Tema: Oscuro</span>
@@ -88,27 +84,30 @@
               <p class="card-text">Aplicación para registrar y buscar sueños con etiquetas y filtros.</p>
             </div>
             <div class="card-actions">
-              <a class="button" href="https://franco-dev-26.github.io/diario_sue-os/">Ver proyecto</a>
+              <a class="button" href="#">Ver proyecto</a>
             </div>
           </li>
+
           <li class="card">
             <div class="card-body">
               <h3 class="card-title"><a href="#">Radio San Roque</a></h3>
               <p class="card-text">La Radio con la mejor programación de San Roque.</p>
             </div>
             <div class="card-actions">
-              <a class="button" href="https://franco-dev-26.github.io/SanRoque/">Ver proyecto</a>
+              <a class="button" href="#">Ver proyecto</a>
             </div>
           </li>
+
           <li class="card">
             <div class="card-body">
               <h3 class="card-title"><a href="#">Franco Búsqueda</a></h3>
-              <p class="card-text">Buscador simple creado en San Roque</p>
+              <p class="card-text">Buscador simple creado en San Roque.</p>
             </div>
             <div class="card-actions">
-              <a class="button" href="https://franco-dev-26.github.io/Paginaweb/">Ver proyecto</a>
+              <a class="button" href="#">Ver proyecto</a>
             </div>
           </li>
+
           <li class="card placeholder">
             <div class="card-body">
               <h3 class="card-title">Próximo Proyecto</h3>
@@ -128,7 +127,7 @@
         <ul class="contact-list">
           <li>📧 <a href="#">Gmail</a></li>
           <li>🌐 <a href="#">LinkedIn</a></li>
-          <li>🐙 <a href="https://github.com/franco-dev-26">GitHub Franco</a></li>
+          <li>🐙 <a href="#">GitHub Franco</a></li>
         </ul>
       </div>
     </section>
@@ -136,11 +135,11 @@
 
   <footer class="site-footer">
     <div class="container">
-      <p>© 2025 Franco Ezequiel Aguinaga· Programador</p>
+      <p>© 2025 Franco · Programador</p>
     </div>
   </footer>
-  
-   <script>
+
+  <script>
     const temas = ["claro","oscuro","violeta","verde","naranja"];
     const html = document.documentElement;
     const boton = document.getElementById("tema-toggle");
