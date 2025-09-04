@@ -7,6 +7,16 @@
   <meta name="description" content="Portafolio de Franco: proyectos, contacto y experiencia como desarrollador web en formación." />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
   <meta name="theme-color" content="#2563eb" />
+
+  <script>
+    (function(){
+      var themes = ["light","dark","violet","green","orange"];
+      var saved = localStorage.getItem("theme");
+      var initial = themes.indexOf(saved) >= 0 ? saved : "dark";
+      document.documentElement.setAttribute("data-theme", initial);
+    })();
+  </script>
+
   <link rel="stylesheet" href="styles.css" />
   <link rel="icon" href="/favicon.ico" />
 </head>
@@ -29,7 +39,7 @@
       </nav>
       <div class="theme-switcher">
         <button id="theme-toggle" class="theme-button">🎨</button>
-        <span class="theme-label">Cambia el tema</span>
+        <span id="theme-label" class="theme-label">Cambia el tema</span>
       </div>
     </div>
   </header>
@@ -110,21 +120,24 @@
 
   <script>
     const themes = ["light","dark","violet","green","orange"];
-    const saved = localStorage.getItem("theme");
-    let current = saved ? themes.indexOf(saved) : 0;
-    if(current < 0) current = 0;
-
     const body = document.body;
+    const html = document.documentElement;
     const button = document.getElementById("theme-toggle");
+    const label = document.getElementById("theme-label");
+
     function setTheme(name){
-      body.className = name;
+      html.setAttribute("data-theme", name);
       localStorage.setItem("theme", name);
+      label.textContent = "Tema: " + name;
     }
-    setTheme(themes[current]);
+
+    const current = html.getAttribute("data-theme") || "dark";
+    setTheme(current);
 
     button.addEventListener("click", () => {
-      current = (current + 1) % themes.length;
-      setTheme(themes[current]);
+      const i = themes.indexOf(html.getAttribute("data-theme"));
+      const next = themes[(i + 1) % themes.length];
+      setTheme(next);
     });
   </script>
 </body>
