@@ -1,89 +1,109 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Franco Ezequiel Aguinaga - Desarrollador</title>
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      background: #f5f5f5;
-      margin: 0;
-      padding: 10px;
-    }
-    header {
-      background: #333;
-      color: #fff;
-      padding: 20px;
-      text-align: center;
-    }
-    section {
-      max-width: 800px;
-      margin: 40px auto;
-      background: #fff;
-      padding: 20px;
-      border-radius: 8px;
-    }
-    h1, h2 {
-      margin: 0 0 10px 0;
-    }
-    ul {
-      list-style-type: none;
-      padding: 0;
-    }
-    ul li {
-      margin: 5px 0;
-    }
-    a {
-      color: #4285f4;
-      text-decoration: none;
-    }
-    a:hover {
-      text-decoration: underline;
-    }
-    .contacto {
-      background: #eee;
-      padding: 10px;
-      border-radius: 5px;
-    }
-    footer {
-      text-align: center;
-      padding: 10px;
-      font-size: 0.9em;
-      color: #777;
-    }
-  </style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Franco — Desarrollador</title>
+  <meta name="description" content="Portafolio de Franco: proyectos, contacto y experiencia como desarrollador web en formación." />
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="icon" href="/favicon.ico" />
 </head>
 <body>
-  <header>
-    <h1>👨‍💻 Franco Ezequiel Aguinaga</h1>
-    <p>Desarrollador web en formación</p>
+  <a class="skip-link" href="#contenido">Saltar al contenido</a>
+
+  <header class="site-header">
+    <div class="container header-inner">
+      <div class="branding">
+        <span class="logo" aria-hidden="true">👨‍💻</span>
+        <div>
+          <h1 class="title">Franco</h1>
+          <p class="subtitle">Desarrollador web en formación</p>
+        </div>
+      </div>
+      <nav class="nav" aria-label="Principal">
+        <a href="#sobre-mi">Sobre mí</a>
+        <a href="#proyectos">Proyectos</a>
+        <a href="#contacto">Contacto</a>
+      </nav>
+    </div>
   </header>
 
-  <section>
-    <h2>Sobre mí</h2>
-    <p>¡Hola! Soy Franco, un entusiasta de la tecnología que disfruta transformar ideas en proyectos reales. Este espacio es mi forma de compartir lo que voy construyendo mientras sigo aprendiendo y mejorando cada día como desarrollador web.</p>
-  </section>
+  <main id="contenido">
+    <section id="sobre-mi" class="section">
+      <div class="container">
+        <h2 class="section-title">Sobre mí</h2>
+        <p class="lead">
+          ¡Hola! Soy Franco, un entusiasta de la tecnología que disfruta transformar ideas en proyectos reales.
+          Este espacio es mi forma de compartir lo que voy construyendo mientras sigo aprendiendo y mejorando
+          cada día como desarrollador web.
+        </p>
+      </div>
+    </section>
 
-  <section>
-    <h2>Proyectos</h2>
-    <ul>
-      <li><a href="https://franco-dev-26.github.io/diario_sue-os/" target="_blank">Diario de sueños </a></li>
-      <li><a href="https://franco-dev-26.github.io/SanRoque/" target="_blank">Radio San Roque</a></li>
-      <li><a href="https://franco-dev-26.github.io/Paginaweb/" target="_blank">Franco Búsqueda </a></li>
-      <li><a href="https://francoooo26.github.io/clon-netflix/" target="_blank">Proximo Proyecto</a></li>
-    </ul>
-  </section>
+    <section id="proyectos" class="section">
+      <div class="container">
+        <h2 class="section-title">Proyectos</h2>
 
-  <section class="contacto">
-    <h2>Contacto</h2>
-    <p>📧 <a href="mailto:franco@example.com">franco@example.com</a></p>
-    <p>🌐 <a href="https://www.linkedin.com/in/tu-perfil" target="_blank">LinkedIn</a></p>
-    <p>🐙 <a href="https://github.com/franco-dev-26" target="_blank">GitHub Franco</a></p>
-  </section>
+        <ul class="grid">
+          <li class="card">
+            <div class="card-body">
+              <h3 class="card-title">Diario de sueños</h3>
+              <p class="card-text">Aplicación para registrar y buscar sueños con etiquetas y filtros.</p>
+            </div>
+            <div class="card-actions">
+              <a class="button" href="#" target="_blank" rel="noopener">Ver proyecto</a>
+            </div>
+          </li>
 
-  <footer>
-    &copy; 2025 Franco Aguinaga
+          <li class="card">
+            <div class="card-body">
+              <h3 class="card-title">Radio San Roque</h3>
+              <p class="card-text">Landing estática con programación y reproductor embebido.</p>
+            </div>
+            <div class="card-actions">
+              <a class="button" href="#" target="_blank" rel="noopener">Ver proyecto</a>
+            </div>
+          </li>
+
+          <li class="card">
+            <div class="card-body">
+              <h3 class="card-title">Franco Búsqueda</h3>
+              <p class="card-text">Buscador simple con paginación y resultados accesibles.</p>
+            </div>
+            <div class="card-actions">
+              <a class="button" href="#" target="_blank" rel="noopener">Ver proyecto</a>
+            </div>
+          </li>
+
+          <li class="card placeholder">
+            <div class="card-body">
+              <h3 class="card-title">Próximo Proyecto</h3>
+              <p class="card-text">En construcción. Próximamente más detalles.</p>
+            </div>
+            <div class="card-actions">
+              <button class="button outline" type="button" disabled>Pronto</button>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <section id="contacto" class="section alt">
+      <div class="container">
+        <h2 class="section-title">Contacto</h2>
+        <ul class="contact-list">
+          <li>📧 <a href="mailto:franco@example.com">franco@example.com</a></li>
+          <li>🌐 <a href="https://www.linkedin.com/in/tu-perfil" target="_blank" rel="noopener">LinkedIn</a></li>
+          <li>🐙 <a href="https://github.com" target="_blank" rel="noopener">GitHub Franco</a></li>
+        </ul>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p>© 2025 Franco · Hecho con amor al código</p>
+    </div>
   </footer>
 </body>
 </html>
