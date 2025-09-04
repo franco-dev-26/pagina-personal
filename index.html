@@ -3,13 +3,10 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-
   <title>Franco — Desarrollador</title>
   <meta name="description" content="Portafolio de Franco: proyectos, contacto y experiencia como desarrollador web en formación." />
-
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
   <meta name="theme-color" content="#2563eb" />
-
   <link rel="stylesheet" href="styles.css" />
   <link rel="icon" href="/favicon.ico" />
 </head>
@@ -30,6 +27,7 @@
         <a href="#proyectos">Proyectos</a>
         <a href="#contacto">Contacto</a>
       </nav>
+      <button id="theme-toggle" class="theme-button">🎨</button>
     </div>
   </header>
 
@@ -106,7 +104,17 @@
       <p>© 2025 Franco · Programador</p>
     </div>
   </footer>
+
+  <script>
+    const themes = ["light","dark","violet"];
+    let current = 0;
+    const body = document.body;
+    const button = document.getElementById("theme-toggle");
+    body.classList.add(themes[current]);
+    button.addEventListener("click", () => {
+      current = (current + 1) % themes.length;
+      body.className = themes[current];
+    });
+  </script>
 </body>
 </html>
-
-
