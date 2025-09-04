@@ -57,26 +57,19 @@ a:hover{ text-decoration: underline; }
 }
 .nav a:hover{ background: var(--surface-2); text-decoration: none; }
 
-.theme-switcher{
-  display:flex; align-items:center; gap:.4rem; margin-left:1rem;
-}
+.theme-switcher{ display:flex; align-items:center; gap:.5rem; margin-left:1rem; }
 .theme-button{
-  padding:.5rem .75rem; font-size:1rem; border:none; border-radius:8px; cursor:pointer;
-  background: var(--brand); color:#fff; font-weight:700;
+  padding:.5rem .75rem; font-size:1rem; border:none; border-radius:10px; cursor:pointer;
+  background: var(--brand); color:#fff; font-weight:800;
   box-shadow: 0 6px 16px rgba(0,0,0,.12);
 }
 .theme-button:hover{ background: var(--brand-600); }
 .theme-label{
-  font-weight:800; font-size:.95rem;
-  background: linear-gradient(90deg, var(--brand), var(--brand-600));
-  -webkit-background-clip: text;
-  background-clip: text;
-  color: transparent;
-  position: relative;
+  font-weight:800; font-size:.95rem; color: var(--text);
+  position: relative; padding-bottom: 2px;
 }
 .theme-label::after{
-  content:"";
-  position:absolute; left:0; right:0; bottom:-2px; height:2px;
+  content:""; position:absolute; left:0; right:0; bottom:-2px; height:2px;
   background: linear-gradient(90deg, var(--brand), var(--brand-600));
   filter: drop-shadow(0 0 6px var(--brand));
   animation: glow 2.2s ease-in-out infinite;
@@ -174,8 +167,7 @@ html{ scroll-behavior: smooth; }
   *{ animation: none !important; transition: none !important; }
 }
 
-/* TEMAS */
-body.light{
+html[data-theme="light"]{
   --bg: #ffffff;
   --surface: #ffffff;
   --surface-2: #f2f6ff;
@@ -189,7 +181,7 @@ body.light{
   --border: rgba(0,0,0,.06);
 }
 
-body.dark{
+html[data-theme="dark"]{
   --bg: #0b0b0b;
   --surface: #121212;
   --surface-2: #0f172a;
@@ -203,7 +195,7 @@ body.dark{
   --border: rgba(255,255,255,.12);
 }
 
-body.violet{
+html[data-theme="violet"]{
   --bg: #1e0035;
   --surface: #2d004d;
   --surface-2: #3b005f;
@@ -217,7 +209,7 @@ body.violet{
   --border: rgba(245,240,255,.18);
 }
 
-body.green{
+html[data-theme="green"]{
   --bg: #002b16;
   --surface: #003322;
   --surface-2: #004d33;
@@ -231,7 +223,7 @@ body.green{
   --border: rgba(234,255,245,.18);
 }
 
-body.orange{
+html[data-theme="orange"]{
   --bg: #331b00;
   --surface: #442200;
   --surface-2: #663300;
@@ -244,3 +236,4 @@ body.orange{
   --header-2: #442200;
   --border: rgba(255,245,230,.18);
 }
+
