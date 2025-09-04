@@ -49,7 +49,7 @@ a:hover{ text-decoration: underline; }
   flex-wrap: wrap;
 }
 .branding{ display:flex; gap:.9rem; align-items:center; min-width: 0; }
-.logo{ font-size: 1.8rem; flex: 0 0 auto; }
+.logo{ flex: 0 0 auto; }
 .title{ margin:0; font-size: clamp(1.3rem, 6vw, 1.6rem); font-weight: 800; }
 .subtitle{ margin:.1rem 0 0 0; font-weight: 600; font-size: clamp(.95rem, 3.5vw, 1rem); }
 
@@ -90,7 +90,6 @@ a:hover{ text-decoration: underline; }
   font-size: clamp(1.35rem, 6vw, 1.9rem);
   letter-spacing: .2px;
 }
-
 .lead{
   margin:0;
   font-size: clamp(1rem, 4.5vw, 1.12rem);
@@ -103,7 +102,6 @@ a:hover{ text-decoration: underline; }
   display:grid; gap:1rem;
   grid-template-columns: repeat(12, 1fr);
 }
-
 .card{
   grid-column: span 6;
   background: var(--surface);
@@ -128,7 +126,6 @@ a:hover{ text-decoration: underline; }
   padding: 0 1.1rem 1.1rem;
   display:flex; gap:.6rem; align-items:center; flex-wrap:wrap;
 }
-
 .placeholder{ opacity:.95; }
 
 .button{
@@ -165,10 +162,27 @@ a:hover{ text-decoration: underline; }
 html{ scroll-behavior: smooth; }
 .section{ scroll-margin-top: 2rem; }
 
+.logo.pro{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+}
+.logo-fr{
+  width:42px;
+  height:42px;
+  display:block;
+}
+.logo.pro:hover .logo-fr{
+  transform: translateY(-1px) scale(1.02);
+  transition: transform .15s ease;
+}
+@media (prefers-reduced-motion: reduce){
+  .logo.pro:hover .logo-fr{ transform:none; }
+}
+
 @media (prefers-reduced-motion: reduce){
   *{ animation: none !important; transition: none !important; }
 }
-
 @media (max-width: 860px){
   .container{ width: min(1000px, 94%); }
   .card{ grid-column: span 12; }
@@ -176,7 +190,6 @@ html{ scroll-behavior: smooth; }
   .nav{ order: 3; width: 100%; }
   .theme-switcher{ order: 2; margin-left: 0; }
 }
-
 @media (max-width: 560px){
   .nav{ gap:.4rem; }
   .nav a{ flex: 1 1 auto; text-align: center; }
@@ -248,16 +261,4 @@ html[data-tema="naranja"]{
   --header-1: #663300;
   --header-2: #442200;
   --border: rgba(255,245,230,.18);
-}
-.logo.initials{
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  width:40px;
-  height:40px;
-  border-radius:50%;
-  font-weight:800;
-  font-size:1rem;
-  background: var(--brand);
-  color:#fff;
 }
