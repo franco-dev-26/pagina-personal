@@ -7,7 +7,6 @@
   <meta name="description" content="Portafolio de Franco: proyectos, contacto y experiencia como desarrollador web en formación." />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
   <meta name="theme-color" content="#2563eb" />
-
   <script>
     (function(){
       var temas = ["claro","oscuro","violeta","verde","naranja"];
@@ -16,7 +15,6 @@
       document.documentElement.setAttribute("data-tema", inicial);
     })();
   </script>
-
   <link rel="stylesheet" href="styles.css" />
   <link rel="icon" href="/favicon.ico" />
 </head>
@@ -39,8 +37,7 @@
             </defs>
             <circle cx="32" cy="32" r="30" fill="url(#grad)" filter="url(#softShadow)"/>
             <circle cx="32" cy="32" r="24" fill="var(--surface)"/>
-            <text x="32" y="36" fill="var(--text)" font-family="Inter, sans-serif"
-                  font-weight="800" font-size="22" text-anchor="middle">FR</text>
+            <text x="32" y="36" fill="var(--text)" font-family="Inter, sans-serif" font-weight="800" font-size="22" text-anchor="middle">FR</text>
           </svg>
         </span>
         <div>
@@ -48,13 +45,12 @@
           <p class="subtitle">Desarrollador web en formación</p>
         </div>
       </div>
-
       <nav class="nav" aria-label="Principal">
         <a href="#sobre-mi">Sobre mí</a>
         <a href="#proyectos">Proyectos</a>
+        <a href="#stack">Tecnologías</a>
         <a href="#contacto">Contacto</a>
       </nav>
-
       <div class="theme-switcher">
         <button id="tema-toggle" class="theme-button">🎨</button>
         <span id="tema-label" class="theme-label">Tema: Oscuro</span>
@@ -87,7 +83,6 @@
               <a class="button" href="#">Ver proyecto</a>
             </div>
           </li>
-
           <li class="card">
             <div class="card-body">
               <h3 class="card-title"><a href="#">Radio San Roque</a></h3>
@@ -97,17 +92,15 @@
               <a class="button" href="#">Ver proyecto</a>
             </div>
           </li>
-
           <li class="card">
             <div class="card-body">
               <h3 class="card-title"><a href="#">Franco Búsqueda</a></h3>
-              <p class="card-text">Buscador simple creado en San Roque.</p>
+              <p class="card-text">Buscador simple creado en San Roque</p>
             </div>
             <div class="card-actions">
               <a class="button" href="#">Ver proyecto</a>
             </div>
           </li>
-
           <li class="card placeholder">
             <div class="card-body">
               <h3 class="card-title">Próximo Proyecto</h3>
@@ -117,6 +110,20 @@
               <button class="button outline" type="button" disabled aria-disabled="true">Pronto</button>
             </div>
           </li>
+        </ul>
+      </div>
+    </section>
+
+    <section id="stack" class="section">
+      <div class="container">
+        <h2 class="section-title">Tecnologías</h2>
+        <ul class="tech-grid">
+          <li class="tech"><span class="tech-icon bg-html">HTML</span><span class="tech-name">HTML5</span></li>
+          <li class="tech"><span class="tech-icon bg-css">CSS</span><span class="tech-name">CSS3</span></li>
+          <li class="tech"><span class="tech-icon bg-js">JS</span><span class="tech-name">JavaScript</span></li>
+          <li class="tech"><span class="tech-icon bg-react">⚛︎</span><span class="tech-name">React</span></li>
+          <li class="tech"><span class="tech-icon bg-node">N</span><span class="tech-name">Node.js</span></li>
+          <li class="tech"><span class="tech-icon bg-git">Git</span><span class="tech-name">Git / GitHub</span></li>
         </ul>
       </div>
     </section>
@@ -144,23 +151,19 @@
     const html = document.documentElement;
     const boton = document.getElementById("tema-toggle");
     const etiqueta = document.getElementById("tema-label");
-
     function aplicarTema(nombre){
       html.setAttribute("data-tema", nombre);
       localStorage.setItem("tema", nombre);
       etiqueta.textContent = "Tema: " + nombre.charAt(0).toUpperCase() + nombre.slice(1);
     }
-
     const actual = html.getAttribute("data-tema") || "oscuro";
     aplicarTema(actual);
-
     boton.addEventListener("click", () => {
       const i = temas.indexOf(html.getAttribute("data-tema"));
       const siguiente = temas[(i + 1) % temas.length];
       aplicarTema(siguiente);
     });
   </script>
-
   <script>
     (function() {
       const links = document.querySelectorAll('a[href]');
