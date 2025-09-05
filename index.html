@@ -7,16 +7,14 @@
   <meta name="description" content="Portafolio de Franco: proyectos, contacto y experiencia como desarrollador web en formación." />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
   <meta name="theme-color" content="#2563eb" />
-
   <script>
     (function(){
-      var temas = ["claro","oscuro","violeta","verde","naranja"];
-      var guardado = localStorage.getItem("tema");
-      var inicial = temas.indexOf(guardado) >= 0 ? guardado : "oscuro";
-      document.documentElement.setAttribute("data-tema", inicial);
+      var temas=["claro","oscuro","violeta","verde","naranja"];
+      var guardado=localStorage.getItem("tema");
+      var inicial=temas.indexOf(guardado)>=0?guardado:"oscuro";
+      document.documentElement.setAttribute("data-tema",inicial);
     })();
   </script>
-
   <link rel="stylesheet" href="styles.css" />
   <link rel="icon" href="/favicon.ico" />
 </head>
@@ -152,35 +150,31 @@
   </footer>
 
   <script>
-    const temas = ["claro","oscuro","violeta","verde","naranja"];
-    const html = document.documentElement;
-    const boton = document.getElementById("tema-toggle");
-    const etiqueta = document.getElementById("tema-label");
-
+    const temas=["claro","oscuro","violeta","verde","naranja"];
+    const html=document.documentElement;
+    const boton=document.getElementById("tema-toggle");
+    const etiqueta=document.getElementById("tema-label");
     function aplicarTema(nombre){
-      html.setAttribute("data-tema", nombre);
-      localStorage.setItem("tema", nombre);
-      etiqueta.textContent = "Tema: " + nombre.charAt(0).toUpperCase() + nombre.slice(1);
+      html.setAttribute("data-tema",nombre);
+      localStorage.setItem("tema",nombre);
+      etiqueta.textContent="Tema: "+nombre.charAt(0).toUpperCase()+nombre.slice(1);
     }
-
-    const actual = html.getAttribute("data-tema") || "oscuro";
+    const actual=html.getAttribute("data-tema")||"oscuro";
     aplicarTema(actual);
-
-    boton.addEventListener("click", () => {
-      const i = temas.indexOf(html.getAttribute("data-tema"));
-      const siguiente = temas[(i + 1) % temas.length];
+    boton.addEventListener("click",()=>{
+      const i=temas.indexOf(html.getAttribute("data-tema"));
+      const siguiente=temas[(i+1)%temas.length];
       aplicarTema(siguiente);
     });
   </script>
-
   <script>
-    (function() {
-      const links = document.querySelectorAll('a[href]');
-      links.forEach(a => {
-        const href = a.getAttribute('href') || '';
-        if (href.startsWith('#') || href.startsWith('mailto:') || href.startsWith('tel:')) return;
-        a.setAttribute('target', '_blank');
-        a.setAttribute('rel', 'noopener');
+    (function(){
+      const links=document.querySelectorAll('a[href]');
+      links.forEach(a=>{
+        const href=a.getAttribute('href')||'';
+        if(href.startsWith('#')||href.startsWith('mailto:')||href.startsWith('tel:')) return;
+        a.setAttribute('target','_blank');
+        a.setAttribute('rel','noopener');
       });
     })();
   </script>
