@@ -189,6 +189,9 @@
       const abierto=nav.classList.toggle("open");
       navBtn.setAttribute("aria-expanded",abierto?"true":"false");
     });
+    nav.querySelectorAll('a[href^="#"]').forEach(a=>{
+      a.addEventListener("click",()=>{ if(nav.classList.contains("open")) nav.classList.remove("open"); });
+    });
   </script>
 </body>
 </html>
