@@ -7,14 +7,16 @@
   <meta name="description" content="Portafolio de Franco: proyectos, contacto y experiencia como desarrollador web en formación." />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
   <meta name="theme-color" content="#2563eb" />
+
   <script>
     (function(){
-      var temas=["claro","oscuro","violeta","verde","naranja"];
-      var guardado=localStorage.getItem("tema");
-      var inicial=temas.indexOf(guardado)>=0?guardado:"oscuro";
-      document.documentElement.setAttribute("data-tema",inicial);
+      var temas = ["claro","oscuro","violeta","verde","naranja"];
+      var guardado = localStorage.getItem("tema");
+      var inicial = temas.indexOf(guardado) >= 0 ? guardado : "oscuro";
+      document.documentElement.setAttribute("data-tema", inicial);
     })();
   </script>
+
   <link rel="stylesheet" href="styles.css" />
   <link rel="icon" href="/favicon.ico" />
 </head>
@@ -48,7 +50,7 @@
       <nav class="nav" aria-label="Principal">
         <a href="#sobre-mi">Sobre mí</a>
         <a href="#proyectos">Proyectos</a>
-        <a href="#stack">Tecnologías</a>
+        <a href="#tecnologias">Tecnologías</a>
         <a href="#contacto">Contacto</a>
       </nav>
       <div class="theme-switcher">
@@ -95,7 +97,7 @@
           <li class="card">
             <div class="card-body">
               <h3 class="card-title"><a href="#">Franco Búsqueda</a></h3>
-              <p class="card-text">Buscador simple creado en San Roque</p>
+              <p class="card-text">Buscador simple creado en San Roque.</p>
             </div>
             <div class="card-actions">
               <a class="button" href="#">Ver proyecto</a>
@@ -114,51 +116,24 @@
       </div>
     </section>
 
-    <section id="stack" class="section">
+    <section id="tecnologias" class="section alt">
       <div class="container">
         <h2 class="section-title">Tecnologías</h2>
         <ul class="tech-grid">
-          <li class="tech">
-            <span class="tech-icon bg-html">
-              <img class="tech-svg" src="https://cdn.simpleicons.org/html5/ffffff" alt="HTML5">
-            </span>
-            <span class="tech-name">HTML5</span>
-          </li>
-          <li class="tech">
-            <span class="tech-icon bg-css">
-              <img class="tech-svg" src="https://cdn.simpleicons.org/css3/ffffff" alt="CSS3">
-            </span>
-            <span class="tech-name">CSS3</span>
-          </li>
-          <li class="tech">
-            <span class="tech-icon bg-js">
-              <img class="tech-svg" src="https://cdn.simpleicons.org/javascript/111111" alt="JavaScript">
-            </span>
-            <span class="tech-name">JavaScript</span>
-          </li>
-          <li class="tech">
-            <span class="tech-icon bg-react">
-              <img class="tech-svg" src="https://cdn.simpleicons.org/react/111111" alt="React">
-            </span>
-            <span class="tech-name">React</span>
-          </li>
-          <li class="tech">
-            <span class="tech-icon bg-node">
-              <img class="tech-svg" src="https://cdn.simpleicons.org/nodedotjs/ffffff" alt="Node.js">
-            </span>
-            <span class="tech-name">Node.js</span>
-          </li>
-          <li class="tech">
-            <span class="tech-icon bg-git">
-              <img class="tech-svg" src="https://cdn.simpleicons.org/git/ffffff" alt="Git">
-            </span>
-            <span class="tech-name">Git / GitHub</span>
-          </li>
+          <li class="tech"><span class="tech-icon bg-php">PHP</span><span class="tech-name">PHP</span></li>
+          <li class="tech"><span class="tech-icon bg-mysql">MySQL</span><span class="tech-name">MySQL</span></li>
+          <li class="tech"><span class="tech-icon bg-sql">SQL</span><span class="tech-name">SQL</span></li>
+          <li class="tech"><span class="tech-icon bg-cpp">C++</span><span class="tech-name">C++</span></li>
+          <li class="tech"><span class="tech-icon bg-js">JS</span><span class="tech-name">JavaScript</span></li>
+          <li class="tech"><span class="tech-icon bg-git">Git</span><span class="tech-name">Git / GitHub</span></li>
+          <li class="tech"><span class="tech-icon bg-xampp">X</span><span class="tech-name">XAMPP</span></li>
+          <li class="tech"><span class="tech-icon bg-vscode">V</span><span class="tech-name">VS Code</span></li>
+          <li class="tech"><span class="tech-icon bg-sublime">S</span><span class="tech-name">Sublime Text</span></li>
         </ul>
       </div>
     </section>
 
-    <section id="contacto" class="section alt">
+    <section id="contacto" class="section">
       <div class="container">
         <h2 class="section-title">Contacto</h2>
         <ul class="contact-list">
@@ -177,31 +152,35 @@
   </footer>
 
   <script>
-    const temas=["claro","oscuro","violeta","verde","naranja"];
-    const html=document.documentElement;
-    const boton=document.getElementById("tema-toggle");
-    const etiqueta=document.getElementById("tema-label");
+    const temas = ["claro","oscuro","violeta","verde","naranja"];
+    const html = document.documentElement;
+    const boton = document.getElementById("tema-toggle");
+    const etiqueta = document.getElementById("tema-label");
+
     function aplicarTema(nombre){
-      html.setAttribute("data-tema",nombre);
-      localStorage.setItem("tema",nombre);
-      etiqueta.textContent="Tema: "+nombre.charAt(0).toUpperCase()+nombre.slice(1);
+      html.setAttribute("data-tema", nombre);
+      localStorage.setItem("tema", nombre);
+      etiqueta.textContent = "Tema: " + nombre.charAt(0).toUpperCase() + nombre.slice(1);
     }
-    const actual=html.getAttribute("data-tema")||"oscuro";
+
+    const actual = html.getAttribute("data-tema") || "oscuro";
     aplicarTema(actual);
-    boton.addEventListener("click",()=>{
-      const i=temas.indexOf(html.getAttribute("data-tema"));
-      const siguiente=temas[(i+1)%temas.length];
+
+    boton.addEventListener("click", () => {
+      const i = temas.indexOf(html.getAttribute("data-tema"));
+      const siguiente = temas[(i + 1) % temas.length];
       aplicarTema(siguiente);
     });
   </script>
+
   <script>
-    (function(){
-      const links=document.querySelectorAll('a[href]');
-      links.forEach(a=>{
-        const href=a.getAttribute('href')||'';
-        if(href.startsWith('#')||href.startsWith('mailto:')||href.startsWith('tel:')) return;
-        a.setAttribute('target','_blank');
-        a.setAttribute('rel','noopener');
+    (function() {
+      const links = document.querySelectorAll('a[href]');
+      links.forEach(a => {
+        const href = a.getAttribute('href') || '';
+        if (href.startsWith('#') || href.startsWith('mailto:') || href.startsWith('tel:')) return;
+        a.setAttribute('target', '_blank');
+        a.setAttribute('rel', 'noopener');
       });
     })();
   </script>
