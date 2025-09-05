@@ -45,14 +45,18 @@
           <p class="subtitle">Desarrollador web en formación</p>
         </div>
       </div>
-      <nav class="nav" aria-label="Principal">
+
+      <button id="nav-toggle" class="nav-toggle" aria-expanded="false" aria-controls="nav" aria-label="Abrir menú">☰</button>
+
+      <nav id="nav" class="nav" aria-label="Principal">
         <a href="#sobre-mi">Sobre mí</a>
         <a href="#proyectos">Proyectos</a>
         <a href="#tecnologias">Tecnologías</a>
         <a href="#contacto">Contacto</a>
       </nav>
+
       <div class="theme-switcher">
-        <button id="tema-toggle" class="theme-button">🎨</button>
+        <button id="tema-toggle" class="theme-button" aria-label="Cambiar tema">🎨</button>
         <span id="tema-label" class="theme-label">Tema: Oscuro</span>
       </div>
     </div>
@@ -152,7 +156,7 @@
   <script>
     const temas=["claro","oscuro","violeta","verde","naranja"];
     const html=document.documentElement;
-    const boton=document.getElementById("tema-toggle");
+    const btnTema=document.getElementById("tema-toggle");
     const etiqueta=document.getElementById("tema-label");
     function aplicarTema(nombre){
       html.setAttribute("data-tema",nombre);
@@ -161,7 +165,7 @@
     }
     const actual=html.getAttribute("data-tema")||"oscuro";
     aplicarTema(actual);
-    boton.addEventListener("click",()=>{
+    btnTema.addEventListener("click",()=>{
       const i=temas.indexOf(html.getAttribute("data-tema"));
       const siguiente=temas[(i+1)%temas.length];
       aplicarTema(siguiente);
@@ -177,6 +181,14 @@
         a.setAttribute('rel','noopener');
       });
     })();
+  </script>
+  <script>
+    const navBtn=document.getElementById("nav-toggle");
+    const nav=document.getElementById("nav");
+    navBtn.addEventListener("click",()=>{
+      const abierto=nav.classList.toggle("open");
+      navBtn.setAttribute("aria-expanded",abierto?"true":"false");
+    });
   </script>
 </body>
 </html>
