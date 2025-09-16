@@ -226,3 +226,24 @@ html[data-tema="naranja"]{
 .bg-xampp{background:var(--c-xampp);}
 .bg-vscode{background:var(--c-vscode);}
 .bg-sublime{background:var(--c-sublime);color:#111;}
+
+.bg-anim{
+  position:fixed; inset:0; z-index:-1; pointer-events:none;
+  background: radial-gradient(1200px 800px at 10% 10%, color-mix(in oklab,var(--brand) 35%, transparent) 0%, transparent 60%),
+              radial-gradient(900px 600px at 90% 20%, color-mix(in oklab,var(--brand-600) 30%, transparent) 0%, transparent 60%),
+              radial-gradient(1000px 700px at 40% 90%, color-mix(in oklab,#22d3ee 22%, transparent) 0%, transparent 70%),
+              radial-gradient(800px 800px at 80% 80%, color-mix(in oklab,#f472b6 18%, transparent) 0%, transparent 65%);
+  filter: blur(30px) saturate(120%);
+  animation: bgFloat 22s ease-in-out infinite alternate;
+  will-change: transform, opacity;
+  opacity:.85;
+}
+@keyframes bgFloat{
+  0%   { transform: translate3d(0,0,0) scale(1); }
+  50%  { transform: translate3d(-2%, -1%, 0) scale(1.03); }
+  100% { transform: translate3d(2%, 1%, 0) scale(1.06); }
+}
+@media (prefers-reduced-motion: reduce){
+  .bg-anim{ animation:none; }
+}
+
